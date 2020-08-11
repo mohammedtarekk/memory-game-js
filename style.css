@@ -1,0 +1,107 @@
+*{box-sizing: border-box}
+
+.clear-fix{clear: both}
+
+body{font-family: sans-serif}
+
+.memory-game{
+    width: 70%;
+    background-color: #efefef;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 40px;
+    text-align: center;
+    position: relative
+}
+
+.memory-game h1{
+    margin: 10px 0 0 0;
+    text-align: center;
+    color: #6e6f6e
+}
+
+.start-mode{
+    background-color: rgb(156 156 156 / 80%);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    left: 0;
+    top: 0
+}
+
+.start-mode button{
+    position: relative;
+    top: 50%;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #444444;
+    background-color: #333;
+    color: #c3c3c3;
+    font-size: 35px;
+    cursor: pointer
+}
+
+.player-info{
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #dadada;
+    border-radius: 10px;
+    margin: 20px 0
+}
+
+.player-name{float: left}
+
+.wrong-trials{float: right}
+
+.game-blocks{
+    padding: 0 15px; 
+    display: flex; 
+    justify-content: space-between;
+    flex-wrap: wrap
+}
+
+.game-blocks.no-click{pointer-events: none}
+
+.block{
+    width: 185px; 
+    height: 190px;
+    margin: 10px 0;
+    transition: transform .5s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative
+}
+
+.block img{width:100%; height: 100%}
+
+.block.isFlipped,
+.block.isDone{
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    pointer-events: none
+}
+
+.face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 5px solid #444444;
+}
+
+.front{
+    background-color: #333;
+    color: #FFF;
+    line-height: 190px
+}
+
+.front:before{
+    content: '?';
+    color: #FFF;
+    font-size: 107px;
+    font-weight: bold
+}
+
+.back{transform: rotateY(180deg)}
